@@ -1,0 +1,20 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+
+
+$grey-100:      #a4a4a4;
+$grey-200:      #efefef;
+$gray-700:      #ffffff23;
+$gray-800:      #ffffff17;
+$gray-900:      #00000060;
+$blue-100:      #04c4ff3f;
+$blue-300:      #04c3ff;
+$indigo:        #14063d;
+$indigo-900:    #14063d;
+$indigo-400:    #00000000;
+$indigo-300:    #800bf5;
+$red-600:       #C65647;
+
+$gradient-primary:      var(--gradient, linear-gradient(90deg, #800bf5 0%, #25c6f9 100%));
+$gradient-blue:         linear-gradient(180deg, #00c6fb, #005bea);
+$gradient-secondary:    linear-gradient(99deg, #9C3FE4 0%, #C65647 100%);
