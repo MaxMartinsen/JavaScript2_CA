@@ -38,7 +38,7 @@ export function registerForm(event) {
     registerUser(registerUrl, userToRegister)
         .then(data => {
             console.log(data);
-            window.location.href = './profile/index.html';
+            window.location.href = '../../../pages/profile/index.html';
         })
         .catch(error => {
             console.error(error);
