@@ -2,6 +2,7 @@ import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from '../../api/url.js';
 import { registerUser } from '../../auth/register.js';
 import { isValidSocialEmail } from '../../validation/isValidSocialEmail.js';
 import { isValidPassword } from '../../validation/isValidPassword.js';
+import { isValidUserName } from '../../validation/isValidUserName.js';
 
 /**
  * Handles the registration form submission.
@@ -24,6 +25,11 @@ export function registerForm(event) {
         console.error("Password must be at least 8 characters long.");
         return;
     }
+    // Check if the username is valid
+    if (!isValidUserName(name)) {
+        console.error("Username should not contain any punctuation other than underscore (_).");
+        return;
+    }
 
     const userToRegister = { name, email, password };
 
@@ -32,6 +38,7 @@ export function registerForm(event) {
     registerUser(registerUrl, userToRegister)
         .then(data => {
             console.log(data);
+            window.location.href = './profile/index.html';
         })
         .catch(error => {
             console.error(error);
