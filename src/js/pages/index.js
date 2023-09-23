@@ -22,12 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if the user has logged in before
     const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
     if (hasLoggedInBefore) {
-        // Redirect to the login page after a delay of 2 seconds
         setTimeout(() => {
             window.location.href = '../src/pages/login/login.html';
         }, 1500);
     } else {
-        // Redirect to the registration page
         setTimeout(() => {
             window.location.href = '../src/pages/register/index.html';
         }, 1500);
