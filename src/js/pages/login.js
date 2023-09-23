@@ -1,8 +1,11 @@
-// Get the button element by its ID
-const signUpButton = document.getElementById('sign_up-button');
+import { signUpButton } from "../components/buttons.js";
 
-// Add a click event listener to the button
-signUpButton.addEventListener('click', function() {
-    // Navigate to the desired page
-    window.location.href = '../../pages/register/index.html';
+document.addEventListener('DOMContentLoaded', function() {
+    if (signUpButton) {
+        signUpButton.addEventListener('click', function() {
+            window.location.href = '../../pages/register/index.html';
+        });
+    } else {
+        console.error('signUpButton element not found!');
+    }
 });
