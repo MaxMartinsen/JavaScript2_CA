@@ -1,6 +1,7 @@
 import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from '../../api/url.js';
 import { registerUser } from '../../auth/register.js';
 import { isValidSocialEmail } from '../../validation/isValidSocialEmail.js';
+import { isValidPassword } from '../../validation/isValidPassword.js';
 
 /**
  * Handles the registration form submission.
@@ -16,6 +17,11 @@ export function registerForm(event) {
     // Check if the email is valid
     if (!isValidSocialEmail(email)) {
         console.error("Invalid Noroff email address.");
+        return;
+    }
+    // Check if the password is valid
+    if (!isValidPassword(password)) {
+        console.error("Password must be at least 8 characters long.");
         return;
     }
 
