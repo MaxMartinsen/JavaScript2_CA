@@ -35,4 +35,4 @@ export async function loginForm(event) {
     } catch (error) {
         console.error("There was an error logging in:", error);
     }
-}
+};
