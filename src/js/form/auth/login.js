@@ -31,7 +31,7 @@ export async function loginForm(event) {
     try {
         const data = await loginUser(loginUrl, userCredentials);
         localStorage.setItem('accessToken', data.accessToken);
-        window.location.href = '../../../pages/profile/index.html';
+        window.location.href = '../../profile/index.html';
     } catch (error) {
         console.error("There was an error logging in:", error);
     }
