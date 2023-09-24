@@ -23,4 +23,4 @@ export async function fetchGetPosts() {
     }
 
     return await response.json();
-}
+};
