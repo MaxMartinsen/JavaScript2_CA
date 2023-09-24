@@ -21,4 +21,4 @@ export function setupFilterListeners(displayPostsFunction) {
         displayPostsFunction('tags');
         setActiveFilter('filter-tags');
     });
-}
+};
