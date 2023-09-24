@@ -2,7 +2,7 @@ import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT } from '/src/js/api/url.js';
 
 const QUERY_PARAMETERS = '?_author=true&_comments=true&_reactions=true';
 
- export async function fetchGetPosts() {
+export async function fetchGetPosts() {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) {
         throw new Error('User is not authenticated');

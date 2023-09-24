@@ -1,9 +1,14 @@
 import { fetchGetPosts } from "/src/js/request/fetchGetPosts.js";
 import { formatDateAndTime } from "/src/js/components/formatDateAndTime.js";
 
-export async function displayPosts(filter = null) {
+export async function displayPosts(filter = null, searchResults = null) {
     try {
-        let posts = await fetchGetPosts();
+        let posts;
+        if (searchResults) {
+            posts = searchResults;
+        } else {
+            posts = await fetchGetPosts();
+        }
 
         if (filter === 'photo') {
             posts = posts.filter(post => post.media);
@@ -48,6 +53,7 @@ export async function displayPosts(filter = null) {
         container.innerHTML = postsHTML;
 
     } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error displaying posts:', error);
     }
-}
+};
+
