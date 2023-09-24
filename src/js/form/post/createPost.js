@@ -1,28 +1,23 @@
-import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT } from '/src/js/api/url.js';
+import { fetchPostPosts } from "../../request/fetchPostPosts.js";
 
-export async function createPost(data) {
-    const accessToken = localStorage.getItem('accessToken');
-    if (!accessToken) {
-        throw new Error('User is not authenticated');
-    }
+export async function createPost() {
+    const postForm = document.getElementById('postForm');
+    postForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
 
-    const postUrl = `${API_BASE_URL}${API_VERSION}${POSTS_ENDPOINT}`;
+        const title = document.getElementById('postTitle').value;
+        const body = document.getElementById('postBody').value;
 
-    const response = await fetch(postUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`
-        },
-        body: JSON.stringify(data)
+        const postData = {
+            title: title,
+            body: body,
+        };
+
+        try {
+            const response = await fetchPostPosts(postData);
+            console.log('Post created:', response);
+        } catch (error) {
+            console.error('Error creating post:', error);
+        }
     });
-
-    if (!response.ok) {
-        const errorDetails = await response.text();
-        console.error("Server response:", errorDetails);
-        throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    
-
-    return await response.json();
-};
+}

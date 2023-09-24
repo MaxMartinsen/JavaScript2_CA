@@ -232,7 +232,7 @@
                           <div class="col flex-grow-1">
                               <input type="text" class="form-control mb-2" placeholder="Title" id="postTitle">
                               <div class="form-floating w-100">
-                                  <textarea class="form-control" placeholder="What's new, add a post?" id="floatingTextarea"></textarea>
+                                  <textarea class="form-control" placeholder="What's new, add a post?" id="postBody"></textarea>
                               </div>
                           </div>
                           <div class="col-auto">
@@ -247,24 +247,18 @@
               </div>
           </div>
           
-            <div class="row me-md-2">
-              <div class="col-12">
-                    <ul class="list-inline p-4 d-flex justify-content-between align-items-center border-bottom border-top border-dark-subtle flex-nowrap overflow-auto d-grid gap-3 ">
-                        <li class="list-inline-item"><a href="#" class="list-item active">Publications</a></li>
-                        <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"  class="list-item">Information</a></li>
-                        <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"  class="list-item">Friends</a></li>
-                        <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"  class="list-item">Photo</a></li>
-                        <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"  class="list-item">Video</a></li>
-                        <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                          data-bs-target="#exampleModal"  class="list-item">Reels</a></li>
-                    </ul>
-              </div>
+          <div class="row me-md-2">
+            <div class="col-12">
+                <ul class="list-inline p-4 d-flex justify-content-between align-items-center border-bottom border-top border-dark-subtle flex-nowrap overflow-auto d-grid gap-3 ">
+                    <li class="list-inline-item"><a href="#" id="filter-publications" class="list-item active">Publications</a></li>
+                    <li class="list-inline-item list-item"><a href="#" id="filter-popular" class="list-item">Popular</a></li>
+                    <li class="list-inline-item list-item"><a href="#" id="filter-photo" class="list-item">Photo</a></li>
+                    <li class="list-inline-item list-item"><a href="#" id="filter-tags" class="list-item">Tags</a></li>
+                </ul>
             </div>
-            <div class="row me-md-2 posts">
+          </div>
+                 
+          <div class="row me-md-2 posts">
                   <div class="col-12">
                       <div class="card mb-5 bg-primary border-dark-subtle">
                           <div class="card-header d-flex align-items-center text-light bg-primary border-bottom border-dark-subtle">
@@ -289,7 +283,7 @@
                           </div>
                       </div>
                   </div>
-            </div>
+          </div>
         </div>
           
       </div>
