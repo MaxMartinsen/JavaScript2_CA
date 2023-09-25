@@ -14,7 +14,7 @@ export async function displayPosts(filter = null, searchResults = null) {
         } else if (filter === 'popular') {
             posts = posts.filter(post => post._count.reactions > 0);
         } else if (filter === 'tags') {
-            posts = posts.filter(post => post.tags && post.tags.includes("string")); // Modify as per the tag you want to filter
+            posts = posts.filter(post => post.tags && post.tags.includes("string"));
         }
         
 
