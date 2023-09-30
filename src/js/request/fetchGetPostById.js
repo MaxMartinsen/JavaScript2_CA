@@ -6,7 +6,8 @@ export async function fetchGetPostById(postId) {
         throw new Error('User is not authenticated');
     }
 
-    const postUrl = `${API_BASE_URL}${API_VERSION}${POSTS_ENDPOINT}/${postId}`;
+    // Add the flags to the URL to get more data
+    const postUrl = `${API_BASE_URL}${API_VERSION}${POSTS_ENDPOINT}/${postId}?_author=true&_comments=true&_reactions=true`;
 
     const response = await fetch(postUrl, {
         method: 'GET',
@@ -22,4 +23,5 @@ export async function fetchGetPostById(postId) {
 
     return await response.json();
 };
+
 
