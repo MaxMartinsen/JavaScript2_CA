@@ -16,24 +16,27 @@ export async function displayPosts(filter = null, searchResults = null) {
         } else if (filter === 'tags') {
             posts = posts.filter(post => post.tags && post.tags.includes("string"));
         }
-        
+
 
         // Retrieve the current user's ID
         const currentUserId = getCurrentUserId();
+
+        function getActionButton(post, currentUserId) {
+            if (post.author.id === currentUserId) {
+                return `<button class="btn list-item border-0" data-action="edit"><span><i class="fa-solid fa-pen-to-square fa-lg"></i></span></button>`;
+            } else {
+                return `<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><span><i class="fa-solid fa-info fa-lg"></i></span></button>`;
+            }
+        }
 
         const postsHTML = posts.map(post => {
             const postAuthor = post.author.name;
             const userAvatar = post.author.avatar || "../../images/img/avatar/default-avatar.jpg";
             const postImage = post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid rounded mb-3">` : '';
             const postCreated = formatDateAndTime(post.created);
-
+        
             // Determine which button to display
-            let actionButton;
-            if (post.author.id === currentUserId) {
-                actionButton = `<button class="btn list-item border-0" data-action="edit"><span><i class="fa-solid fa-pen-to-square fa-lg"></i></span></button>`;
-            } else {
-                actionButton = `<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><span><i class="fa-solid fa-info fa-lg"></i></span></button>`;
-            }
+            const actionButton = getActionButton(post, currentUserId);
 
             return `
             <div class="col-12">
@@ -75,6 +78,14 @@ export async function displayPosts(filter = null, searchResults = null) {
             button.addEventListener('click', (e) => {
                 const postId = e.target.closest('button').getAttribute('data-post-id');
                 window.location.href = `/src/pages/post/index.html?postId=${postId}`;
+            });
+        });
+
+        // Add event listeners for the "edit" buttons
+        container.querySelectorAll('button[data-action="edit"]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const postId = e.target.closest('button').getAttribute('data-post-id');
+                window.location.href = `/src/pages/edit/index.html?postId=${postId}`;
             });
         });
 
