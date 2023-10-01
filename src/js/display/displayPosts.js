@@ -27,7 +27,7 @@ export async function displayPosts(filter = null, searchResults = null) {
 
         function getActionButton(post, currentUserName) {
             if (post.author.name === currentUserName) {
-                return `<button class="btn list-item border-0" data-action="edit"><span><i class="fa-regular fa-pen-to-square fa-lg"></i></span></button>`;
+                return `<button class="btn list-item border-0" data-action="edit" data-post-id="${post.id}"><span><i class="fa-regular fa-pen-to-square fa-lg"></i></span></button>`;
             } else {
                 return `<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><span><i class="fa-solid fa-info fa-lg"></i></span></button>`;
             }
@@ -89,15 +89,15 @@ export async function displayPosts(filter = null, searchResults = null) {
         container.querySelectorAll('button[data-action="edit"]').forEach(button => {
             button.addEventListener('click', (e) => {
                 const postId = e.target.closest('button').getAttribute('data-post-id');
-                window.location.href = `/src/pages/edit/index.html?postId=${postId}`;
+                if (postId) {
+                    window.location.href = `/src/pages/edit/index.html?postId=${postId}`;
+                } else {
+                    console.error('Failed to retrieve post ID for editing');
+                }
             });
         });
 
     } catch (error) {
         console.error('Error displaying posts:', error);
     }
-};
-
-function getCurrentUserId() {
-    return localStorage.getItem('userId');
 };

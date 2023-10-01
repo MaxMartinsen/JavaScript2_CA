@@ -180,6 +180,32 @@
                 <h4 class="mb-4">Custom</h4>
               </div>
             </div>
+
+            <form id="editPostForm">
+              <div class="card mb-3 bg-primary border-dark-subtle">
+                  <div class="card-header d-flex align-items-center text-light bg-primary">
+                      <div class="col-auto">
+                          <div class="rounded-circle overflow-hidden me-3" style="width: 50px; height: 50px;">
+                              <img src="../../images/img/avatar/default-avatar.jpg" alt="Profile Avatar" class="h-100">
+                          </div>
+                      </div>
+                      <div class="col flex-grow-1">
+                          <input type="text" class="form-control mb-2" placeholder="Title" id="title" required>
+                          <div class="form-floating w-100">
+                              <textarea class="form-control" placeholder="Body" id="body" required></textarea>
+                          </div>
+                          <input type="text" class="form-control mt-2" placeholder="Image URL" id="media">
+                          <input type="text" class="form-control mt-2" placeholder="Tags (comma separated)" id="tags">
+                      </div>
+                      <div class="col-auto">
+                          <button type="submit" class="btn btn-success border-0 ms-2">
+                            <i class="fa-solid fa-rotate fa-lg"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+          
                  
           <div class="row me-md-2 post">
           </div>
@@ -189,7 +215,7 @@
       </div>
       </div>
     </div>
-    <script type="module" src="/src/js/pages/post.js"></script>
+    <script type="module" src="/src/js/pages/edit.js"></script>
     <script
       src="https://kit.fontawesome.com/8ba4dac050.js"
       crossorigin="anonymous"
