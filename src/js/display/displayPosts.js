@@ -19,11 +19,15 @@ export async function displayPosts(filter = null, searchResults = null) {
 
 
         // Retrieve the current user's ID
-        const currentUserId = getCurrentUserId();
+        const currentUserName = getCurrentUserName();
 
-        function getActionButton(post, currentUserId) {
-            if (post.author.id === currentUserId) {
-                return `<button class="btn list-item border-0" data-action="edit"><span><i class="fa-solid fa-pen-to-square fa-lg"></i></span></button>`;
+        function getCurrentUserName() {
+            return localStorage.getItem('userName');
+        };
+
+        function getActionButton(post, currentUserName) {
+            if (post.author.name === currentUserName) {
+                return `<button class="btn list-item border-0" data-action="edit"><span><i class="fa-regular fa-pen-to-square fa-lg"></i></span></button>`;
             } else {
                 return `<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><span><i class="fa-solid fa-info fa-lg"></i></span></button>`;
             }
@@ -34,9 +38,9 @@ export async function displayPosts(filter = null, searchResults = null) {
             const userAvatar = post.author.avatar || "../../images/img/avatar/default-avatar.jpg";
             const postImage = post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid rounded mb-3">` : '';
             const postCreated = formatDateAndTime(post.created);
-        
+
             // Determine which button to display
-            const actionButton = getActionButton(post, currentUserId);
+            const actionButton = getActionButton(post, currentUserName);
 
             return `
             <div class="col-12">
