@@ -15,7 +15,6 @@ export function editPost() {
 
         try {
             const updatedPost = await fetchPutPost(postId, { title, body, media, tags });
-            console.log('Post updated:', updatedPost);
         } catch (error) {
             console.error('Error updating post:', error);
         }

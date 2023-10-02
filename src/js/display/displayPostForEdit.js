@@ -1,14 +1,11 @@
 import { fetchGetPostById } from "/src/js/request/fetchGetPostById.js";
 
 export async function displayPostForEdit() {
-    console.log("displayPostForEdit function called"); // Check if the function is being called
 
     try {
         // Extract the post ID from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const postId = Number(urlParams.get('postId'));
-        
-        console.log("Post ID:", postId); // Log the extracted post ID
 
         if (!postId || isNaN(postId)) {
             console.error('Invalid post ID');
@@ -17,7 +14,6 @@ export async function displayPostForEdit() {
 
         // Fetch the post by its ID
         const post = await fetchGetPostById(postId);
-        console.log(post);  // Log the fetched post data
 
         // Get references to the form fields
         const postTitle = document.getElementById('title');
