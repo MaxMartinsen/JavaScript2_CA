@@ -38,10 +38,11 @@ export async function displayPosts(filter = null, searchResults = null) {
             const userAvatar = post.author.avatar || "../../images/img/avatar/default-avatar.jpg";
             const postImage = post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid rounded mb-3">` : '';
             const postCreated = formatDateAndTime(post.created);
-
+            const postTitle = post.title ? `<h3>${post.title}</h3>` : '';
+        
             // Determine which button to display
             const actionButton = getActionButton(post, currentUserName);
-
+        
             return `
             <div class="col-12">
                 <div class="card mb-5 bg-primary border-dark-subtle">
@@ -61,6 +62,7 @@ export async function displayPosts(filter = null, searchResults = null) {
                         </div>
                     </div>
                     <div class="card-body">
+                        ${postTitle}
                         ${postImage}
                         <h4 class="mb-0">${post.body}</h4>
                     </div>
@@ -73,6 +75,7 @@ export async function displayPosts(filter = null, searchResults = null) {
             </div>
             `;
         }).join('');
+        
 
         const container = document.querySelector('.posts');
         container.innerHTML = postsHTML;

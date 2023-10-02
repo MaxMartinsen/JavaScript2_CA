@@ -19,6 +19,7 @@ export async function displayPost() {
         const currentUserId = getCurrentUserId();
 
         // Define necessary variables
+        const postTitle = post.title ? `<h3>${post.title}</h3>` : '';
         const postAuthor = post.author?.name || "Unknown Author";
         const userAvatar = post.author?.avatar || "../../images/img/avatar/default-avatar.jpg";
         const postImage = post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid rounded mb-3">` : '';
@@ -43,6 +44,7 @@ export async function displayPost() {
                     </div>
                 </div>
                 <div class="card-body">
+                    ${postTitle}
                     ${postImage}
                     <h4 class="mb-0">${post.body}</h4>
                 </div>
