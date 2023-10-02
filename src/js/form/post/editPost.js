@@ -15,6 +15,8 @@ export function editPost() {
 
         try {
             const updatedPost = await fetchPutPost(postId, { title, body, media, tags });
+            // Redirect to the feed page after successful update
+            window.location.href = '/src/pages/feed/index.html';
         } catch (error) {
             console.error('Error updating post:', error);
         }
@@ -24,4 +26,5 @@ export function editPost() {
 function getPostIdFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('postId');
-}
+};
+
