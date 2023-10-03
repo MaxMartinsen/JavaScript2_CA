@@ -1,5 +1,5 @@
-import { displayPosts } from '../../display/displayPosts.mjs';
-import { fetchGetPosts } from '/src/js/request/fetchGetPosts.mjs';
+import { displayPosts } from '/src/js/display/displayPosts.mjs';
+import { fetchGetPosts } from '/src/js/request/fetch.mjs';
 
 export async function searchPosts(query) {
     try {

@@ -1,4 +1,4 @@
-import { fetchGetPosts } from "/src/js/request/fetchGetPosts.mjs";
+import { fetchGetPosts } from "/src/js/request/fetch.mjs";
 import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
 import { del } from "/src/js/request/request.mjs";
 
