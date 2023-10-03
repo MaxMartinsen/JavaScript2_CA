@@ -151,10 +151,10 @@ h1 {
   }
 }
 .delete-item {
-  color: #a4a4a4 !important;
+  color: $grey-100 !important;
 }
 .delete-item:hover{
-  color: #dc3545 !important;
+  color: $red-500 !important;
 }
 h3 {
   color: $grey-200 !important;
@@ -381,4 +381,3 @@ nav {
     background-color: #212b86;
   }
 }
-
