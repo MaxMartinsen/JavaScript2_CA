@@ -1,6 +1,6 @@
 import { post } from "/src/js/request/request.mjs";
 import { displayPosts } from "/src/js/display/displayPosts.js";
-import { formatTags } from "/src/js/components/formatTag.js";
+import { formatTags } from "/src/js/utils/utils.mjs";
 
 export async function createPost() {
     const postForm = document.getElementById('postForm');

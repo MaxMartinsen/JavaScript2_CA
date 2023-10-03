@@ -7,4 +7,3 @@ export function formatTags(tags) {
         return tag;
     });
 };
-

@@ -1,6 +1,5 @@
 import { fetchGetPostById } from "../request/fetchGetPostById.js";
-import { formatDateAndTime } from "/src/js/components/formatDateAndTime.js";
-import { formatTags } from "/src/js/components/formatTag.js";
+import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
 
 
 export async function displayPost() {

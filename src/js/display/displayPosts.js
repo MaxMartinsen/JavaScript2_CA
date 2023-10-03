@@ -1,6 +1,5 @@
 import { fetchGetPosts } from "/src/js/request/fetchGetPosts.js";
-import { formatDateAndTime } from "/src/js/components/formatDateAndTime.js";
-import { formatTags } from "/src/js/components/formatTag.js";
+import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
 import { del } from "/src/js/request/request.mjs";
 
 export async function displayPosts(filter = null, searchResults = null) {

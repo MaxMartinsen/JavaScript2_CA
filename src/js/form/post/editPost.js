@@ -1,5 +1,5 @@
 import { fetchPutPost } from "/src/js/request/fetchPutPost.js";
-import { formatTags } from "/src/js/components/formatTag.js";
+import { formatTags } from "/src/js/utils/utils.mjs";
 
 export function editPost() {
     const form = document.getElementById('editPostForm');
