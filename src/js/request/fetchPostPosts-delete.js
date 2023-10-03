@@ -1,27 +1,28 @@
 import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT } from '/src/js/api/url.mjs';
 
-export async function fetchGetPostById(postId) {
+export async function fetchPostPosts(data) {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) {
         throw new Error('User is not authenticated');
     }
 
-    // Add the flags to the URL to get more data
-    const postUrl = `${API_BASE_URL}${API_VERSION}${POSTS_ENDPOINT}/${postId}?_author=true&_comments=true&_reactions=true`;
+    const postUrl = `${API_BASE_URL}${API_VERSION}${POSTS_ENDPOINT}`;
 
     const response = await fetch(postUrl, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${accessToken}`
-        }
+        },
+        body: JSON.stringify(data)
     });
 
     if (!response.ok) {
+        const errorDetails = await response.text();
+        console.error("Server response:", errorDetails);
         throw new Error(`HTTP error! Status: ${response.status}`);
     }
+    
 
     return await response.json();
 };
-
-

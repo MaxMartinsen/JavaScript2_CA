@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_VERSION, LOGIN_ENDPOINT } from '/src/js/api/url.js';
+import { API_BASE_URL, API_VERSION, LOGIN_ENDPOINT } from '/src/js/api/url.mjs';
 import { authUser } from '/src/js/request/auth.mjs';
 import { isValidSocialEmail, isValidPassword } from '/src/js/validation/validation.mjs';
 

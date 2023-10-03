@@ -1,6 +1,6 @@
-import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT } from '/src/js/api/url.js';
+import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT } from '/src/js/api/url.mjs';
 
-export async function fetchPostPosts(data) {
+export async function post(data) {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) {
         throw new Error('User is not authenticated');

@@ -1,4 +1,4 @@
-import { fetchPostPosts } from "/src/js/request/fetchPostPosts.js";
+import { post } from "/src/js/request/request.mjs";
 import { displayPosts } from "/src/js/display/displayPosts.js";
 import { formatTags } from "/src/js/components/formatTag.js";
 
@@ -34,7 +34,7 @@ export async function createPost() {
         };
 
         try {
-            const response = await fetchPostPosts(postData);
+            const response = await post(postData);
             console.log('Post created:', response);
 
             // Reset the form

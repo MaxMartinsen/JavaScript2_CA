@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_VERSION, PROFILES_ENDPOINT } from '/src/js/api/url.js';
+import { API_BASE_URL, API_VERSION, PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
 
 export async function fetchProfiles() {
     const profilesUrl = `${API_BASE_URL}${API_VERSION}${PROFILES_ENDPOINT}`;

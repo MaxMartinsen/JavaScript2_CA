@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_VERSION, PROFILES_ENDPOINT } from '/src/js/api/url.js';
+import { API_BASE_URL, API_VERSION, PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get the access token and user's name from local storage
