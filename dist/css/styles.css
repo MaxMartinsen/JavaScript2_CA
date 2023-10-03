@@ -11851,6 +11851,10 @@ textarea.form-control-lg {
   }
 }
 /* Global */
+body, html {
+  overflow-y: hidden;
+}
+
 .wrapper {
   overflow: hidden;
   display: flex;
