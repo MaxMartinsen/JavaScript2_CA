@@ -155,6 +155,7 @@ h1 {
   }
 }
 .delete-item {
+  transition: color 0.5s ease-in-out;
   color: $grey-100 !important;
 }
 .delete-item:hover{

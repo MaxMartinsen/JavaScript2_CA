@@ -12011,6 +12011,7 @@ h1, .h1 {
 }
 
 .delete-item {
+  transition: color 0.5s ease-in-out;
   color: #a4a4a4 !important;
 }
 
