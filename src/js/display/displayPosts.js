@@ -1,5 +1,6 @@
 import { fetchGetPosts } from "/src/js/request/fetchGetPosts.js";
 import { formatDateAndTime } from "/src/js/components/formatDateAndTime.js";
+import { formatTags } from "/src/js/components/formatTag.js";
 
 export async function displayPosts(filter = null, searchResults = null) {
     try {
@@ -39,6 +40,8 @@ export async function displayPosts(filter = null, searchResults = null) {
             const postImage = post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid rounded mb-3">` : '';
             const postCreated = formatDateAndTime(post.created);
             const postTitle = post.title ? `<h3>${post.title}</h3>` : '';
+            const postTags = post.tags ? `<h6 class="text-white">${formatTags(post.tags).join(', ')}</h6>` : '';
+
         
             // Determine which button to display
             const actionButton = getActionButton(post, currentUserName);
@@ -65,6 +68,7 @@ export async function displayPosts(filter = null, searchResults = null) {
                         ${postTitle}
                         ${postImage}
                         <h4 class="mb-0">${post.body}</h4>
+                        ${postTags}
                     </div>
                     <div class="card-footer d-flex justify-content-between text-white border-top border-dark-subtle bg-info">
                         <span><i class="far fa-thumbs-up"></i> ${post._count.reactions} Likes</span>

@@ -8,9 +8,13 @@ export async function createPost() {
 
         const titleElement = document.getElementById('postTitle');
         const bodyElement = document.getElementById('postBody');
+        const mediaElement = document.getElementById('postMedia');
+        const tagsElement = document.getElementById('postTags'); 
 
         const title = titleElement.value;
         const body = bodyElement.value;
+        const media = mediaElement.value;
+        const tags = tagsElement.value.split(',').map(tag => tag.trim());
 
         // Validate the post body length
         if (body.length > 280) {
@@ -21,6 +25,8 @@ export async function createPost() {
         const postData = {
             title: title,
             body: body,
+            media: media,
+            tags: tags
         };
 
         try {
@@ -30,6 +36,8 @@ export async function createPost() {
             // Reset the form
             titleElement.value = '';
             bodyElement.value = '';
+            mediaElement.value = '';
+            tagsElement.value = '';
 
             // Update the post display
             displayPosts();

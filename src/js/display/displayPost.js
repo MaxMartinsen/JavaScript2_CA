@@ -1,5 +1,6 @@
 import { fetchGetPostById } from "../request/fetchGetPostById.js";
 import { formatDateAndTime } from "/src/js/components/formatDateAndTime.js";
+import { formatTags } from "/src/js/components/formatTag.js";
 
 export async function displayPost() {
     try {
@@ -24,6 +25,8 @@ export async function displayPost() {
         const userAvatar = post.author?.avatar || "../../images/img/avatar/default-avatar.jpg";
         const postImage = post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid rounded mb-3">` : '';
         const postCreated = formatDateAndTime(post.created);
+        const postTags = post.tags ? `<h6 class="text-white">${formatTags(post.tags).join(', ')}</h6>` : '';
+
 
         // Render the post details
         const postHTML = `
@@ -47,6 +50,7 @@ export async function displayPost() {
                     ${postTitle}
                     ${postImage}
                     <h4 class="mb-0">${post.body}</h4>
+                    ${postTags}
                 </div>
                 <div class="card-footer d-flex justify-content-between text-white border-top border-dark-subtle bg-info">
                     <span><i class="far fa-thumbs-up"></i> ${post._count.reactions} Likes</span>
