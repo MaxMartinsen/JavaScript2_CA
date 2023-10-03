@@ -26,13 +26,13 @@ export async function displayPosts(filter = null, searchResults = null) {
             return localStorage.getItem('userName');
         };
 
-        function getActionButton(post, currentUserName) {
+        function getActivityButton(post, currentUserName) {
             if (post.author.name === currentUserName) {
                 return `<button class="btn list-item border-0" data-action="edit" data-post-id="${post.id}"><span><i class="fa-regular fa-pen-to-square fa-lg"></i></span></button>`;
             } else {
                 return `<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><span><i class="fa-solid fa-info fa-lg"></i></span></button>`;
             }
-        }
+        };
 
         const postsHTML = posts.map(post => {
             const postAuthor = post.author.name;
@@ -44,7 +44,7 @@ export async function displayPosts(filter = null, searchResults = null) {
 
         
             // Determine which button to display
-            const actionButton = getActionButton(post, currentUserName);
+            const actionButton = getActivityButton(post, currentUserName);
         
             return `
             <div class="col-12">
@@ -108,3 +108,5 @@ export async function displayPosts(filter = null, searchResults = null) {
         console.error('Error displaying posts:', error);
     }
 };
+
+//<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><i class="fa-regular fa-trash-can fa-lg"></i></span></button>
