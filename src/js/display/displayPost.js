@@ -2,6 +2,7 @@ import { fetchGetPostById } from "../request/fetchGetPostById.js";
 import { formatDateAndTime } from "/src/js/components/formatDateAndTime.js";
 import { formatTags } from "/src/js/components/formatTag.js";
 
+
 export async function displayPost() {
     try {
         // Extract the post ID from the URL
