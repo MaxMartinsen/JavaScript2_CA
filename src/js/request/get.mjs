@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT, PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
+import { API_BASE_URL, API_VERSION } from '/src/js/api/url.mjs';
 
 const QUERY_PARAMETERS = '?_author=true&_comments=true&_reactions=true';
 
