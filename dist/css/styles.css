@@ -12009,7 +12009,8 @@ h1, .h1 {
 .delete-item {
   color: #a4a4a4 !important;
 }
-.delete-item:hover{
+
+.delete-item:hover {
   color: #dc3545 !important;
 }
 

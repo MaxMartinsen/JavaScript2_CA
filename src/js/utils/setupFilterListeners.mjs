@@ -1,4 +1,4 @@
-import { setActiveFilter } from './setActiveFilter.js';
+import { setActiveFilter } from '/src/js/utils/utils.mjs';
 
 export function setupFilterListeners(displayPostsFunction) {
     document.getElementById('filter-publications').addEventListener('click', (e) => {

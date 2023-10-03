@@ -15,8 +15,9 @@ export async function displayPosts(filter = null, searchResults = null) {
     } else if (filter === "popular") {
       posts = posts.filter((post) => post._count.reactions > 0);
     } else if (filter === "tags") {
-      posts = posts.filter((post) => post.tags && post.tags.includes("string"));
+      posts = posts.filter((post) => post.tags && post.tags.length > 0);
     }
+  
 
     // Retrieve the current user's ID
     const currentUserName = getCurrentUserName();
