@@ -1,4 +1,4 @@
-import { displayPost } from "../display/displayPost.js";
+import { displayPost } from "/src/js/display/displayPost.mjs";
 document.addEventListener('DOMContentLoaded', async function() {
     displayPost();
 

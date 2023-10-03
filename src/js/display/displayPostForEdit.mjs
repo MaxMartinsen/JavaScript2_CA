@@ -1,4 +1,4 @@
-import { fetchGetPostById } from "/src/js/request/fetchGetPostById.js";
+import { fetchGetPostById } from "/src/js/request/fetchGetPostById.mjs";
 
 export async function displayPostForEdit() {
 

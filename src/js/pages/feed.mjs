@@ -1,7 +1,7 @@
-import { createPost } from "../form/post/createPost.js";
-import { displayPosts } from "../display/displayPosts.js";
+import { createPost } from "../form/post/createPost.mjs";
+import { displayPosts } from "../display/displayPosts.mjs";
 import { setupFilterListeners } from "/src/js/utils/utils.mjs";
-import { searchPosts } from "../form/post/searchPosts.js";
+import { searchPosts } from "../form/post/searchPosts.mjs";
 
 document.addEventListener('DOMContentLoaded', async function() {
     createPost();
@@ -15,6 +15,3 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
 });
-
-
-

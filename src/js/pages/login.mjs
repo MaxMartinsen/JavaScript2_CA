@@ -1,5 +1,5 @@
-import { loginForm } from '../form/auth/login.js';
-import { signUpButton } from "../components/buttons.js";
+import { loginForm } from '/src/js/form/auth/login.mjs';
+import { signUpButton } from "/src/js/components/buttons.mjs";
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector("form");

@@ -1,4 +1,4 @@
-import { fetchGetPostById } from "../request/fetchGetPostById.js";
+import { fetchGetPostById } from "../request/fetchGetPostById.mjs";
 import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
 
 

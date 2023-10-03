@@ -1,4 +1,4 @@
-import { signInButton, signUpButton } from '../components/buttons.js';
+import { signInButton, signUpButton } from '/src/js/components/buttons.mjs';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Handle signInButton click
