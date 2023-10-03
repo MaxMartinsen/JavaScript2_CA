@@ -1,5 +1,5 @@
 import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from '/src/js/api/url.mjs';
-import { authUser } from '/src/js/request/auth.mjs';
+import { authUser } from '/src/js/request/request.mjs';
 import { isValidUserName, isValidSocialEmail, isValidPassword } from '/src/js/validation/validation.mjs';
 
 /**

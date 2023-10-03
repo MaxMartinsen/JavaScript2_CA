@@ -1,3 +1,5 @@
+export { authUser } from "/src/js/request/auth.mjs";
+
 export { get } from "/src/js/request/get.mjs";
 
 export { put } from "/src/js/request/put.mjs";
