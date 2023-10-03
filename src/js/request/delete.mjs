@@ -1,6 +1,6 @@
-import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT } from '/src/js/api/url.js';
+import { API_BASE_URL, API_VERSION, POSTS_ENDPOINT } from '/src/js/api/url.mjs';
 
-export async function fetchDeletePost(postId) {
+export async function del(postId) {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) {
         throw new Error('User is not authenticated');

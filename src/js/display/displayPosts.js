@@ -1,7 +1,7 @@
 import { fetchGetPosts } from "/src/js/request/fetchGetPosts.js";
 import { formatDateAndTime } from "/src/js/components/formatDateAndTime.js";
 import { formatTags } from "/src/js/components/formatTag.js";
-import { fetchDeletePost } from "/src/js/request/fetchDeletePost.js";
+import { del } from "/src/js/request/request.mjs";
 
 export async function displayPosts(filter = null, searchResults = null) {
   try {
@@ -139,7 +139,7 @@ export async function displayPosts(filter = null, searchResults = null) {
             );
             if (confirmation) {
               try {
-                await fetchDeletePost(postId);
+                await del(postId);
                 // Refresh the posts after deletion
                 displayPosts();
               } catch (error) {
