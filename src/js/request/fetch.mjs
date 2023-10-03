@@ -1,5 +1,5 @@
 import { POSTS_ENDPOINT, PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
-import { get } from "/src/js/request/get.mjs";
+import { get } from "/src/js/request/request.mjs";
 
 const QUERY_PARAMETERS = '?_author=true&_comments=true&_reactions=true';
 
