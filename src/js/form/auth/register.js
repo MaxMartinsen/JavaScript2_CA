@@ -1,8 +1,6 @@
-import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from '../../api/url.js';
-import { registerUser } from '../../auth/register.js';
-import { isValidSocialEmail } from '../../validation/isValidSocialEmail.js';
-import { isValidPassword } from '../../validation/isValidPassword.js';
-import { isValidUserName } from '../../validation/isValidUserName.js';
+import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from '/src/js/api/url.js';
+import { authUser } from '/src/js/request/auth.mjs';
+import { isValidUserName, isValidSocialEmail, isValidPassword } from '/src/js/validation/validation.mjs';
 
 /**
  * Handles the registration form submission.
@@ -35,7 +33,7 @@ export function registerForm(event) {
 
     const registerUrl = `${API_BASE_URL}${API_VERSION}${REGISTER_ENDPOINT}`;
 
-    registerUser(registerUrl, userToRegister)
+    authUser(registerUrl, userToRegister)
         .then(data => {
             console.log(data);
             window.location.href = '/src/pages/profile/index.html';

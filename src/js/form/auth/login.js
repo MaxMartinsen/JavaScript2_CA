@@ -1,7 +1,6 @@
 import { API_BASE_URL, API_VERSION, LOGIN_ENDPOINT } from '../../api/url.js';
-import { loginUser } from '../../auth/login.js';
-import { isValidSocialEmail } from '../../validation/isValidSocialEmail.js';
-import { isValidPassword } from '../../validation/isValidPassword.js';
+import { authUser } from '/src/js/request/auth.mjs';
+import { isValidSocialEmail, isValidPassword } from '/src/js/validation/validation.mjs';
 
 /**
  * Handles the login form submission.
@@ -29,7 +28,7 @@ export async function loginForm(event) {
     const loginUrl = `${API_BASE_URL}${API_VERSION}${LOGIN_ENDPOINT}`;
 
     try {
-        const data = await loginUser(loginUrl, userCredentials);
+        const data = await authUser(loginUrl, userCredentials);
         localStorage.setItem('accessToken', data.accessToken);
         localStorage.setItem('userName', data.name);
         window.location.href = '/src/pages/profile/index.html';
