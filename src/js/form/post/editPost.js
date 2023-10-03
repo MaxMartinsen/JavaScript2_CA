@@ -1,4 +1,4 @@
-import { fetchPutPost } from "/src/js/request/fetchPutPost.js";
+import { put } from "/src/js/request/request.mjs";
 import { formatTags } from "/src/js/utils/utils.mjs";
 
 export function editPost() {
@@ -20,7 +20,7 @@ export function editPost() {
         const postId = getPostIdFromURL();
 
         try {
-            const updatedPost = await fetchPutPost(postId, { title, body, media, tags });
+            const updatedPost = await put(postId, { title, body, media, tags });
             window.location.href = '/src/pages/feed/index.html';
         } catch (error) {
             console.error('Error updating post:', error);
