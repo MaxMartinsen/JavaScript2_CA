@@ -1,5 +1,6 @@
-import { fetchPostPosts } from "../../request/fetchPostPosts.js";
-import { displayPosts } from "../../display/displayPosts.js";
+import { fetchPostPosts } from "/src/js/request/fetchPostPosts.js";
+import { displayPosts } from "/src/js/display/displayPosts.js";
+import { formatTags } from "/src/js/components/formatTag.js";
 
 export async function createPost() {
     const postForm = document.getElementById('postForm');
@@ -14,7 +15,10 @@ export async function createPost() {
         const title = titleElement.value;
         const body = bodyElement.value;
         const media = mediaElement.value;
-        const tags = tagsElement.value.split(',').map(tag => tag.trim());
+        const tagsRaw = tagsElement.value.split(',');
+        let tags = document.getElementById('postTags').value.split(/[\s,]+/).filter(tag => tag).map(tag => tag.trim());
+        tags = formatTags(tags);
+
 
         // Validate the post body length
         if (body.length > 280) {

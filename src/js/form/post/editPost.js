@@ -1,4 +1,5 @@
 import { fetchPutPost } from "/src/js/request/fetchPutPost.js";
+import { formatTags } from "/src/js/components/formatTag.js";
 
 export function editPost() {
     const form = document.getElementById('editPostForm');
@@ -9,7 +10,12 @@ export function editPost() {
         const title = document.getElementById('title').value;
         const body = document.getElementById('body').value;
         const media = document.getElementById('media').value;
-        const tags = document.getElementById('tags').value.split(',').map(tag => tag.trim());
+        let tags = document.getElementById('tags').value.split(/[\s,]+/).filter(tag => tag).map(tag => tag.trim());
+        tags = formatTags(tags);
+
+
+        // Format the tags
+        tags = formatTags(tags);
 
         const postId = getPostIdFromURL();
 
