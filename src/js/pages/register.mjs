@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", registerForm);
     if (signInButton) {
         signInButton.addEventListener('click', function() {
-            window.location.href = '../../pages/login/login.html';
+            window.location.href = '../../pages/login/index.html';
         });
     } else {
         console.error('signInButton element not found!');

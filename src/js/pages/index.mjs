@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle signInButton click
     if (signInButton) {
         signInButton.addEventListener('click', function() {
-            window.location.href = '../src/pages/login/login.html';
+            window.location.href = '../src/pages/login/index.html';
         });
     } else {
         console.error('signInButton element not found!');
@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Check if the user has logged in before
-    const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
-    if (hasLoggedInBefore) {
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
         setTimeout(() => {
-            window.location.href = '../src/pages/login/login.html';
+            window.location.href = '../src/pages/login/index.html';
         }, 1500);
     } else {
         setTimeout(() => {
