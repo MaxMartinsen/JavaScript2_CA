@@ -24,13 +24,15 @@ export function registerForm(event) {
         return;
     }
 
-    localStorage.clear();
-
     const userToRegister = { name, email, password };
     const registerUrl = `${API_BASE_URL}${API_VERSION}${REGISTER_ENDPOINT}`;
 
     authUser(registerUrl, userToRegister)
         .then(data => {
+            // Store the necessary data in local storage after successful registration
+            localStorage.setItem('accessToken', data.accessToken);
+            localStorage.setItem('userName', name);
+
             console.log(data);
             window.location.href = '/src/pages/profile/index.html';
         })
@@ -38,3 +40,4 @@ export function registerForm(event) {
             console.error(error);
         });
 }
+

@@ -1,6 +1,7 @@
-import { API_BASE_URL, API_VERSION, PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
+import { PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
+import { get } from '/src/js/request/request.mjs';
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Get the access token and user's name from local storage
     const accessToken = localStorage.getItem('accessToken');
     const userName = localStorage.getItem('userName');
@@ -12,27 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Define the API endpoint to fetch the profile data based on the user's name
-    const profileUrl = `${API_BASE_URL}${API_VERSION}${PROFILES_ENDPOINT}/${userName}`;
+    const profileEndpoint = `${PROFILES_ENDPOINT}/${userName}`;
 
-    // Fetch the profile data
-    fetch(profileUrl, {
-        headers: {
-            'Authorization': `Bearer ${accessToken}`
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
+    try {
+        const data = await get(profileEndpoint);
         const profileNameElements = document.querySelectorAll("#text-singleEntryName");
         profileNameElements.forEach(element => {
             element.textContent = data.name;
         });
-    })
-    .catch(error => {
+    } catch (error) {
         console.error("There was an error fetching the profile data:", error);
-    });
+    }
 });
