@@ -22,6 +22,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             element.textContent = data.name;
         });
     } catch (error) {
-        console.error("There was an error fetching the profile data:", error);
+        console.error("There was an error fetching the profile data:", error.message || error);
     }
 });

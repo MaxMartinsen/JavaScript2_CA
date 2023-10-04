@@ -19,7 +19,9 @@ export async function get(endpoint, queryParameters = '') {
     });
 
     if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.json().then(err => {
+            throw new Error(`HTTP error! Status: ${response.status}, Message: ${err.message || 'Unknown error'}`);
+        });
     }
 
     return await response.json();

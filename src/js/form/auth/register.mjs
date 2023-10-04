@@ -2,7 +2,7 @@ import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from '/src/js/api/url.mj
 import { authUser } from '/src/js/request/request.mjs';
 import { isValidUserName, isValidSocialEmail, isValidPassword } from '/src/js/validation/validation.mjs';
 
-export function registerForm(event) {
+export async function registerForm(event) {
     event.preventDefault();
 
     const email = document.getElementById("emailInput").value;
@@ -27,17 +27,14 @@ export function registerForm(event) {
     const userToRegister = { name, email, password };
     const registerUrl = `${API_BASE_URL}${API_VERSION}${REGISTER_ENDPOINT}`;
 
-    authUser(registerUrl, userToRegister)
-        .then(data => {
-            // Store the necessary data in local storage after successful registration
-            localStorage.setItem('accessToken', data.accessToken);
-            localStorage.setItem('userName', name);
+    try {
+        const data = await authUser(registerUrl, userToRegister);
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('userName', data.name);
+        window.location.href = '/src/pages/login/index.html';
+    } catch (error) {
+        console.error("There was an error registering:", error);
+    }
+};
 
-            console.log(data);
-            window.location.href = '/src/pages/profile/index.html';
-        })
-        .catch(error => {
-            console.error(error);
-        });
-}
 
