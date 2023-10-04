@@ -1,9 +1,3 @@
-/**
- * Registers a user by making a POST request to the provided URL with the given user data.
- * @param {string} url - The endpoint URL.
- * @param {Object} userData - The user data to be sent to the server.
- * @returns {Promise<Object>} - The JSON response from the server.
- */
 export async function authUser(url, userData) {
     try {
         const postData = {
@@ -17,7 +11,17 @@ export async function authUser(url, userData) {
         if (!response.ok) {
             throw new Error(`HTTPS error! Status: ${response.status}`);
         }
-        return await response.json();
+        const data = await response.json();
+
+        // Assuming the response contains a token and user details
+        if (data.token) {
+            localStorage.setItem('accessToken', data.token);
+        }
+        if (data.user && data.user.name) {
+            localStorage.setItem('userName', data.user.name);
+        }
+
+        return data;
     } catch (error) {
         console.error(error);
         throw error;
