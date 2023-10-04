@@ -1,5 +1,6 @@
 import { PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
 import { get } from '/src/js/request/request.mjs';
+import { displayPostsByProfile } from '/src/js/display/displayPostsByProfile.mjs';
 
 document.addEventListener('DOMContentLoaded', async function() {
     // Get the access token and user's name from local storage
@@ -20,6 +21,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         const profileNameElements = document.querySelectorAll("#text-singleEntryName");
         profileNameElements.forEach(element => {
             element.textContent = data.name;
+        // Display all posts by the profile
+        displayPostsByProfile(userName);
         });
     } catch (error) {
         console.error("There was an error fetching the profile data:", error.message || error);

@@ -61,12 +61,12 @@
                       </div>
                   </li>
                   <li class="nav-item">
-                      <div class="search d-flex">
-                          <input type="text" id="searchInput" class="form-control" placeholder="Search">
-                          <button class="btn list-item ms-2 border-0" data-bs-toggle="modal" data-bs-target="#exampleModal" id="searchButton">
-                              <i class="fa-solid fa-magnifying-glass"></i>
-                          </button>
-                      </div>
+                    <div class="search d-flex">
+                      <input type="text" id="searchInput" class="form-control" placeholder="Search">
+                      <button class="btn list-item ms-2 border-0" id="searchButton">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </div>
                   </li>
               </ul>
           </div>
@@ -250,63 +250,24 @@
                   </div>
                 </div>
             </div> 
-              <div class="row me-md-2">
-                <div class="col-12">
+            <div class="row me-md-2">
+              <div class="col-12">
                   <ul class="list-inline p-4 d-flex justify-content-between align-items-center border-bottom border-top border-dark-subtle flex-nowrap overflow-auto d-grid gap-3 ">
-                      <li class="list-inline-item"><a href="#" class="list-item active">Publications</a></li>
-                      <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"  class="list-item">Information</a></li>
-                      <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"  class="list-item">Friends</a></li>
-                      <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"  class="list-item">Photo</a></li>
-                      <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"  class="list-item">Video</a></li>
-                      <li class="list-inline-item list-item"><a href="#"   data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"  class="list-item">Reels</a></li>
+                      <li class="list-inline-item"><a href="#" id="filter-publications" class="list-item active">Publications</a></li>
+                      <li class="list-inline-item list-item"><a href="#" id="filter-popular" class="list-item">Popular</a></li>
+                      <li class="list-inline-item list-item"><a href="#" id="filter-photo" class="list-item">Photo</a></li>
+                      <li class="list-inline-item list-item"><a href="#" id="filter-tags" class="list-item">Tags</a></li>
                   </ul>
               </div>
             </div>
-            
-        <div class="row me-md-2 ">
-              <div class="col-12">
-                  <div class="card mb-5 bg-primary border-dark-subtle">
-                      <div class="card-header d-flex align-items-center justify-content-between text-light bg-primary border-bottom border-dark-subtle">
-                        <div class="d-flex align-items-center">
-                          <div class="rounded-circle overflow-hidden" style="width: 50px; height: 50px;">
-                            <img src="../../images/img/avatar/default-avatar.jpg" alt="Profile Avatar" class="h-100">
-                          </div>
-                          <div class="ms-3">
-                            <h6 class="mb-0">Profile Name</h6>
-                            <small>1 hr ago</small>
-                          </div>
-                        </div>
-                        <div class="d-flex">
-                          <button class="btn list-item border-0"><span><i class="fa-solid fa-info fa-lg"></i></span></button>
-                          <button class="btn list-item border-0"><span><i class="fa-regular fa-star fa-lg"></i></span></button>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                          <img src="../../images/img/publications/pub-1.jpg" alt="Post Image" class="img-fluid rounded mb-3 ">
-                          <h4 class="mb-0">
-                              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, cum excepturi iste explicabo eum deserunt perferendis magni iure corporis fugit, id soluta veniam facilis repellendus reprehenderit? Blanditiis veritatis velit rerum.
-                          </h4>
-                      </div>
-                      <div class="card-footer d-flex justify-content-between text-white border-top border-dark-subtle bg-info ">
-                          <span><i class="far fa-thumbs-up"></i> 100 Likes</span>
-                          <span><i class="far fa-comment"></i> 50 Comments</span>
-                          <span><i class="far fa-share-square"></i> Share</span>
-                      </div>
-                  </div>
-              </div>
-        </div>
+
+          <div class="row me-md-2 posts">
           </div>
-          </div>
-          
+        </div>  
       </div>
       </div>
       </div>
-      <script type="module" src="/src/js/pages/profile.mjs"></script>
+    <script type="module" src="/src/js/pages/profile.mjs"></script>
     <script
       src="https://kit.fontawesome.com/8ba4dac050.js"
       crossorigin="anonymous"

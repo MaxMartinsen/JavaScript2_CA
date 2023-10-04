@@ -36,5 +36,3 @@ export async function registerForm(event) {
         console.error("There was an error registering:", error);
     }
 };
-
-

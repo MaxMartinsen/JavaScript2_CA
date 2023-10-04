@@ -2,7 +2,7 @@ import { fetchGetPosts } from "/src/js/request/fetch.mjs";
 import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
 import { del } from "/src/js/request/request.mjs";
 
-export async function displayPosts(filter = null, searchResults = null) {
+export async function displayPosts(filter = null, searchResults = null, profileUserName = null) {
   try {
     let posts;
     if (searchResults) {
@@ -27,25 +27,26 @@ export async function displayPosts(filter = null, searchResults = null) {
     }
 
     function getActivityButton(post, currentUserName) {
-      if (post.author.name === currentUserName) {
-        return `<button class="btn list-item border-0" data-action="edit" data-post-id="${post.id}"><span><i class="fa-regular fa-pen-to-square fa-lg"></i></span></button>`;
-      } else {
-        return `<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><span><i class="fa-solid fa-info fa-lg"></i></span></button>`;
-      }
+        if (profileUserName || post.author.name === currentUserName) {
+            return `<button class="btn list-item border-0" data-action="edit" data-post-id="${post.id}"><span><i class="fa-regular fa-pen-to-square fa-lg"></i></span></button>`;
+        } else {
+            return `<button class="btn list-item border-0" data-action="info" data-post-id="${post.id}"><span><i class="fa-solid fa-info fa-lg"></i></span></button>`;
+        }
     }
+
     function getActionButton(post, currentUserName) {
-      if (post.author.name === currentUserName) {
-        return `<button class="btn delete-item border-0" data-action="delete" data-post-id="${post.id}"><span><i class="fa-regular fa-trash-can fa-lg"></i></span></button>`;
-      } else {
-        return `<button class="btn list-item border-0" data-action="follow" data-post-id="${post.id}"><span><i class="fa-regular fa-star fa-lg"></i></span></button>`;
-      }
-    }
+        if (profileUserName || post.author.name === currentUserName) {
+            return `<button class="btn delete-item border-0" data-action="delete" data-post-id="${post.id}"><span><i class="fa-regular fa-trash-can fa-lg"></i></span></button>`;
+        } else {
+            return `<button class="btn list-item border-0" data-action="follow" data-post-id="${post.id}"><span><i class="fa-regular fa-star fa-lg"></i></span></button>`;
+        }
+    }  
 
     const postsHTML = posts
       .map((post) => {
-        const postAuthor = post.author.name;
-        const userAvatar =
-          post.author.avatar || "../../images/img/avatar/default-avatar.jpg";
+        // Move this line inside the map function
+        const postAuthor = profileUserName || (post.author && post.author.name ? post.author.name : 'Unknown Author');
+        const userAvatar = post.author && post.author.avatar ? post.author.avatar : "../../images/img/avatar/default-avatar.jpg";
         const postImage = post.media
           ? `<img src="${post.media}" alt="Post Image" class="img-fluid rounded mb-3">`
           : "";

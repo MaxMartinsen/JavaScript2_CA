@@ -33,4 +33,3 @@ export const POSTS_ENDPOINT = '/social/posts';
  * @type {string}
  */
 export const PROFILES_ENDPOINT = '/social/profiles';
-
