@@ -104,11 +104,13 @@
                   <div class="mb-3 text-start">
                       <label for="emailInput" class="form-label">Email Address</label>
                       <input type="email" class="form-control rounded-3" id="emailInput" placeholder="yourname@noroff.no" required>
+                      <div id="emailError" class="text-danger mt-2 error-text"></div>
                   </div>
               
                   <div class="mb-3 text-start">
                       <label for="passwordInput" class="form-label">Password</label>
-                      <input type="password" class="form-control rounded-3" id="passwordInput" placeholder="Strong" required minlength="8">
+                      <input type="password" class="form-control rounded-3" id="passwordInput" placeholder="Strong" required>
+                      <div id="passwordError" class="text-danger mt-2 error-text"></div>
                   </div>
               
                   <button type="submit" class="btn btn-secondary w-100 rounded-3">Sign in</button>
