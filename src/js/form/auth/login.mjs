@@ -1,3 +1,13 @@
+/**
+ * Handles the login form submission, validates the input, and attempts to authenticate the user.
+ * If authentication is successful, the user is redirected to the profile page.
+ * If there's an error during authentication, an error modal is displayed.
+ * @module form/auth/login
+ * @async
+ * @function
+ * @param {Event} event - The submit event triggered by the login form.
+ * @throws Will log an error to the console if there's an issue during authentication.
+ */
 import { API_BASE_URL, API_VERSION, LOGIN_ENDPOINT } from "/src/js/api/url.mjs";
 import { authUser } from "/src/js/request/request.mjs";
 import { validateForm } from "/src/js/utils/utils.mjs";
