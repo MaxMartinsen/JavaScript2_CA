@@ -1,3 +1,12 @@
+/**
+ * @module display/displayPostForEdit
+ * Displays a post in a form for editing.
+ * Extracts the post ID from the URL, fetches the post by its ID, and populates the form fields with the post data.
+ * @async
+ * @function
+ * @throws Will throw an error if there's an issue fetching the post or if the post ID is invalid.
+ */
+
 import { fetchGetPostById } from "/src/js/request/fetch.mjs";
 
 export async function displayPostForEdit() {
