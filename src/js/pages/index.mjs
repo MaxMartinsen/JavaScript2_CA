@@ -1,3 +1,10 @@
+/**
+ * @module pages/index
+ * Once the DOM is fully loaded, this script initializes the index page by setting up
+ * event listeners for the signInButton and signUpButton. It also checks if the user
+ * has logged in before and redirects them accordingly.
+ */
+
 import { signInButton, signUpButton } from '/src/js/components/buttons.mjs';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,4 +38,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1500);
     }
 });
-
