@@ -1,3 +1,15 @@
+/**
+ * Initializes the post editing process by attaching an event listener to the edit post form.
+ * When the form is submitted, it formats the tags, sends a request to update the post, and
+ * redirects to the feed page. If there's an error during post updating, it logs the error.
+ * @module form/post/editPost
+ * @function
+ * @throws Will log an error to the console if there's an issue during post updating.
+ * Extracts the post ID from the current URL.
+ * @function
+ * @returns {string|null} The post ID if present in the URL, otherwise null.
+ */
+
 import { put } from "/src/js/request/request.mjs";
 import { formatTags } from "/src/js/utils/utils.mjs";
 
@@ -32,4 +44,3 @@ function getPostIdFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('postId');
 };
-
