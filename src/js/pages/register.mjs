@@ -1,3 +1,9 @@
+/**
+ * @module pages/register
+ * Once the DOM is fully loaded, this script initializes the registration page.
+ * It clears the local storage, sets up the registration form submission handler,
+ * and provides a way to navigate to the login page.
+ */
 import { registerForm } from '/src/js/form/auth/register.mjs';
 import { signInButton } from '/src/js/components/buttons.mjs';
 
