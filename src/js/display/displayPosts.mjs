@@ -1,3 +1,13 @@
+/**
+ * Displays a list of posts on the page.
+ * @module display/displayPosts
+ * @async
+ * @function
+ * @param {string} [filter=null] - The filter criteria for posts (e.g., "photo", "popular", "tags").
+ * @param {Array} [searchResults=null] - An array of posts that match a search query.
+ * @param {string} [profileUserName=null] - The username of the profile being viewed.
+ * @throws Will throw an error if there's an issue fetching the posts or rendering them.
+ */
 import { fetchGetPosts } from "/src/js/request/fetch.mjs";
 import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
 import { del } from "/src/js/request/request.mjs";
