@@ -64,7 +64,6 @@ export async function displayPost() {
         const container = document.querySelector('.post');
         container.innerHTML = postHTML;
 
-        // If you have additional interactions on this page, add them here
 
     } catch (error) {
         console.error('Error displaying post:', error);

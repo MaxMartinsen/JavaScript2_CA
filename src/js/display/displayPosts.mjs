@@ -44,7 +44,6 @@ export async function displayPosts(filter = null, searchResults = null, profileU
 
     const postsHTML = posts
       .map((post) => {
-        // Move this line inside the map function
         const postAuthor = profileUserName || (post.author && post.author.name ? post.author.name : 'Unknown Author');
         const userAvatar = post.author && post.author.avatar ? post.author.avatar : "../../images/img/avatar/default-avatar.jpg";
         const postImage = post.media
