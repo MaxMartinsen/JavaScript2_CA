@@ -1,3 +1,10 @@
+/**
+ * @module pages/login
+ * Once the DOM is fully loaded, this script initializes the login page by setting up
+ * event listeners for the form submission and signUpButton. It handles the login form
+ * submission and redirects users who want to sign up to the registration page.
+ */
+
 import { loginForm } from '/src/js/form/auth/login.mjs';
 import { signUpButton } from "/src/js/components/buttons.mjs";
 
