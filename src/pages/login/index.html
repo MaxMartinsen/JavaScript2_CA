@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="lh-1 h-100">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../dist/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-    <title>DizMiss | Sign in</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../dist/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <title>DizMiss | Sign in</title>
+</head>
   <body class="lh-1 h-100">
     <div class="wrapper bg-primary-subtle">
       <div class="elipse-content">
@@ -20,12 +20,9 @@
         <nav class="navbar navbar-expand-md navbar-dark p-3" id="headerNav">
           <div class="container-fluid">
             <a class="navbar-brand d-block d-md-none" href="#">
-              <img
-                src="../../images/Logo.svg"
-                height="40" alt="DizMiss kids logo">
+              <img src="../../images/Logo.svg" height="40" alt="DizMiss kids logo">
             </a>
-            <button
-              class="navbar-toggler border-0"
+            <button class="navbar-toggler border-0"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNavDropdown"
@@ -85,7 +82,33 @@
       </div>
     </div>
     
-<!-- Modal -->
+      <!-- Modal -->
+<div
+class="modal fade bg-modal"
+id="errorModal"
+tabindex="-1"
+aria-labelledby="errorModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content bg-primary-subtle text-white border ">
+    <div class="modal-header border-bottom-0 ">
+      <h5 class="modal-title" id="errorModalLabel">Sorry!</h5>
+      <button
+        class="btn list-item border-0 "
+        data-bs-dismiss="modal"
+        aria-label="close"
+      ><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body text-center">
+      "Oops! The username and password you entered don't match. Please double-check and try again."
+    </div>
+    <div class="modal-footer d-flex justify-content-center border-top-0 ">
+      <button class="btn btn-primary border border-primary text-white" data-bs-dismiss="modal">Ok</button>
+    </div>
+  </div>
+</div>
+</div>
 
       <main class="main my-3">
         <div class="background-dekor">

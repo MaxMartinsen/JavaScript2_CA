@@ -36,10 +36,19 @@ export async function loginForm(event) {
 
   try {
     const data = await authUser(loginUrl, userCredentials);
-    localStorage.setItem("accessToken", data.accessToken);
-    localStorage.setItem("userName", data.name);
-    window.location.href = "/src/pages/profile/index.html";
+    localStorage.setItem('accessToken', data.accessToken);
+    localStorage.setItem('userName', data.name);
+    window.location.href = '/src/pages/profile/index.html';
   } catch (error) {
     console.error("There was an error logging in:", error);
+    const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+    errorModal.show();
+    errorModal._element.addEventListener('hidden.bs.modal', () => {
+        // Clear local storage
+        localStorage.clear();
+
+        // Refresh the page
+        location.reload();
+    });
   }
 }
