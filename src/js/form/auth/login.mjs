@@ -1,6 +1,6 @@
 import { API_BASE_URL, API_VERSION, LOGIN_ENDPOINT } from "/src/js/api/url.mjs";
 import { authUser } from "/src/js/request/request.mjs";
-import { validateForm } from "/src/js/utils/validateForm.mjs";
+import { validateForm } from "/src/js/utils/utils.mjs";
 import { showErrorModal } from "/src/js/utils/errorHandling.mjs";
 
 export async function loginForm(event) {

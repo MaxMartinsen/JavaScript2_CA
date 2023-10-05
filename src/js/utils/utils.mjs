@@ -1,3 +1,5 @@
+export { validateForm } from "/src/js/utils/validateForm.mjs";
+
 export { setupFilterListeners } from "/src/js/utils/setupFilterListeners.mjs";
 
 export { setActiveFilter } from "/src/js/utils/setActiveFilter.mjs";
