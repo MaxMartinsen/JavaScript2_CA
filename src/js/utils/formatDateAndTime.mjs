@@ -1,3 +1,17 @@
+/**
+ * Utility functions related to date and time formatting.
+ * @module formatDateAndTime
+ * Formats a date string into a more readable format: "YYYY-MM-DD HH:MM".
+ * 
+ * @function
+ * @name formatDateAndTime
+ * @param {string} dateString - The date string to be formatted.
+ * @returns {string} The formatted date string.
+ * @example
+ * 
+ * const formattedDate = formatDateAndTime("2023-09-23T12:34:56Z");
+ * Outputs: "2023-09-23 12:34"
+ */
 export const formatDateAndTime = (dateString) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
