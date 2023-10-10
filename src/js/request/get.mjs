@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_VERSION } from '/src/js/api/url.mjs';
+import { API_BASE_URL, API_VERSION, QUERY_PARAMETERS } from '/src/js/api/url.mjs';
 
 /**
  * Sends a GET request to the specified endpoint and returns the response data.
@@ -6,11 +6,11 @@ import { API_BASE_URL, API_VERSION } from '/src/js/api/url.mjs';
  * @async
  * @function
  * @param {string} endpoint - The API endpoint to which the GET request should be sent.
- * @param {string} [queryParameters='?_author=true&_comments=true&_reactions=true'] - Additional query parameters to be appended to the endpoint.
+ * @param {string} [queryParameters=QUERY_PARAMETERS] - Additional query parameters to be appended to the endpoint.
  * @returns {Promise<Object>} - Returns a promise that resolves with the response data.
  * @throws {Error} - Throws an error if the user is not authenticated or if the HTTP request fails.
  */
-export async function get(endpoint, queryParameters = '?_author=true&_comments=true&_reactions=true') {
+export async function get(endpoint, queryParameters = QUERY_PARAMETERS) {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) {
         throw new Error('User is not authenticated');
