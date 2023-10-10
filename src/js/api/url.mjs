@@ -34,4 +34,9 @@ export const POSTS_ENDPOINT = '/social/posts';
  */
 export const PROFILES_ENDPOINT = '/social/profiles';
 
+/**
+ * Common query parameters to be used with API requests.
+ * These parameters are used to fetch additional related data like author, comments, and reactions.
+ * @type {string}
+ */
 export const QUERY_PARAMETERS = '?_author=true&_comments=true&_reactions=true';
