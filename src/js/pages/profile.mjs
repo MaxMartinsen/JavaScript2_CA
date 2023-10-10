@@ -1,15 +1,14 @@
+import { PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
+import { get } from '/src/js/request/request.mjs';
+import { displayPostsByProfile } from '/src/js/display/displayPostsByProfile.mjs';
+import { setupFilterListeners } from "/src/js/utils/utils.mjs";
+import { searchPosts } from "/src/js/form/posts/searchPosts.mjs";
 /**
  * @module pages/profile
  * Once the DOM is fully loaded, this script initializes the profile page.
  * It retrieves the user's access token and name from local storage, checks if the user is authenticated,
  * and then fetches and displays the user's profile data and posts.
  */
-import { PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
-import { get } from '/src/js/request/request.mjs';
-import { displayPostsByProfile } from '/src/js/display/displayPostsByProfile.mjs';
-import { setupFilterListeners } from "/src/js/utils/utils.mjs";
-import { searchPosts } from "/src/js/form/posts/searchPosts.mjs";
-
 document.addEventListener('DOMContentLoaded', async function() {
     // Get the access token and user's name from local storage
     const accessToken = localStorage.getItem('accessToken');
