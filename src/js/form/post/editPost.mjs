@@ -1,3 +1,5 @@
+import { put } from "/src/js/request/request.mjs";
+import { formatTags } from "/src/js/utils/utils.mjs";
 /**
  * Initializes the post editing process by attaching an event listener to the edit post form.
  * When the form is submitted, it formats the tags, sends a request to update the post, and
@@ -9,10 +11,6 @@
  * @function
  * @returns {string|null} The post ID if present in the URL, otherwise null.
  */
-
-import { put } from "/src/js/request/request.mjs";
-import { formatTags } from "/src/js/utils/utils.mjs";
-
 export function editPost() {
     const form = document.getElementById('editPostForm');
 
