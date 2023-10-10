@@ -1,3 +1,6 @@
+import { fetchGetPosts } from "/src/js/request/fetch.mjs";
+import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
+import { del } from "/src/js/request/request.mjs";
 /**
  * Displays a list of posts on the page.
  * @module display/displayPosts
@@ -8,10 +11,6 @@
  * @param {string} [profileUserName=null] - The username of the profile being viewed.
  * @throws Will throw an error if there's an issue fetching the posts or rendering them.
  */
-import { fetchGetPosts } from "/src/js/request/fetch.mjs";
-import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
-import { del } from "/src/js/request/request.mjs";
-
 export async function displayPosts(filter = null, searchResults = null, profileUserName = null) {
   try {
     let posts;
