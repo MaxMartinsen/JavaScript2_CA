@@ -1,3 +1,6 @@
+import { post } from "/src/js/request/request.mjs";
+import { displayPosts } from "/src/js/display/displayPosts.mjs";
+import { formatTags } from "/src/js/utils/utils.mjs";
 /**
  * Initializes the post creation process by attaching an event listener to the post form.
  * When the form is submitted, it validates the input, sends a request to create the post,
@@ -7,10 +10,6 @@
  * @function
  * @throws Will log an error to the console if there's an issue during post creation.
  */
-import { post } from "/src/js/request/request.mjs";
-import { displayPosts } from "/src/js/display/displayPosts.mjs";
-import { formatTags } from "/src/js/utils/utils.mjs";
-
 export async function createPost() {
     const postForm = document.getElementById('postForm');
     postForm.addEventListener('submit', async function(event) {
