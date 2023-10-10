@@ -1,3 +1,7 @@
+import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from "/src/js/api/url.mjs";
+import { authUser } from "/src/js/request/request.mjs";
+import { validateForm } from "/src/js/utils/utils.mjs";
+import { showErrorModal } from "/src/js/utils/errorHandling.mjs";
 /**
  * Handles the registration form submission, validates the input, and attempts to register the user.
  * If registration is successful, the user is redirected to the login page.
@@ -8,12 +12,6 @@
  * @param {Event} event - The submit event triggered by the registration form.
  * @throws Will log an error to the console if there's an issue during registration.
  */
-
-import { API_BASE_URL, API_VERSION, REGISTER_ENDPOINT } from "/src/js/api/url.mjs";
-import { authUser } from "/src/js/request/request.mjs";
-import { validateForm } from "/src/js/utils/utils.mjs";
-import { showErrorModal } from "/src/js/utils/errorHandling.mjs";
-
 export async function registerForm(event) {
     event.preventDefault();
 
