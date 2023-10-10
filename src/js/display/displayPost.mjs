@@ -1,3 +1,5 @@
+import { fetchGetPostById } from "/src/js/request/fetch.mjs";
+import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
 /**
  * @module display/displayPost
  * Displays a post on the page.
@@ -8,11 +10,6 @@
  * Retrieves the current user's ID from local storage.
  * @returns {string|null} The user ID or null if not found.
  */
-
-import { fetchGetPostById } from "/src/js/request/fetch.mjs";
-import { formatDateAndTime, formatTags } from "/src/js/utils/utils.mjs";
-
-
 export async function displayPost() {
     try {
         // Extract the post ID from the URL
