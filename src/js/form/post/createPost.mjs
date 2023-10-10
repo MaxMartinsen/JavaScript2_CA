@@ -43,7 +43,6 @@ export async function createPost() {
 
         try {
             const response = await post(postData);
-            console.log('Post created:', response);
 
             // Reset the form
             titleElement.value = '';
