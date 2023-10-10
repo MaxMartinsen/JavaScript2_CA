@@ -33,3 +33,5 @@ export const POSTS_ENDPOINT = '/social/posts';
  * @type {string}
  */
 export const PROFILES_ENDPOINT = '/social/profiles';
+
+export const QUERY_PARAMETERS = '?_author=true&_comments=true&_reactions=true';
