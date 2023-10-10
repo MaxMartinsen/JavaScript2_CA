@@ -1,3 +1,4 @@
+import { fetchGetPostById } from "/src/js/request/fetch.mjs";
 /**
  * @module display/displayPostForEdit
  * Displays a post in a form for editing.
@@ -6,9 +7,6 @@
  * @function
  * @throws Will throw an error if there's an issue fetching the post or if the post ID is invalid.
  */
-
-import { fetchGetPostById } from "/src/js/request/fetch.mjs";
-
 export async function displayPostForEdit() {
 
     try {
