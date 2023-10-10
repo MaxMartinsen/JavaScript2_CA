@@ -1,7 +1,11 @@
-import { POSTS_ENDPOINT, PROFILES_ENDPOINT } from '/src/js/api/url.mjs';
+import { POSTS_ENDPOINT, PROFILES_ENDPOINT, QUERY_PARAMETERS } from '/src/js/api/url.mjs';
 import { get } from "/src/js/request/request.mjs";
-
-const QUERY_PARAMETERS = '?_author=true&_comments=true&_reactions=true';
+/**
+ * Fetches a post by its ID.
+ *
+ * @param {string|number} postId - The ID of the post to be fetched.
+ * @returns {Promise<Object>} - A promise that resolves to the fetched post.
+ */
 
 export async function fetchGetPostById(postId) {
     const endpoint = `${POSTS_ENDPOINT}/${postId}`;
