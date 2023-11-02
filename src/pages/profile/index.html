@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="lh-1 h-100">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../dist/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    >
+    <title>DizMiss | Profile</title>
+  </head>
+  <body class="lh-1 h-100 overflow">
+    <div class="wrapper bg-primary-subtle">
+      <div class="elipse-content">
+        <div class="elipse-left_item"></div>
+        <div class="elipse-right_item"></div>
+      </div>
+      <div class="container-md ">
+        <nav class="navbar navbar-expand-md navbar-dark p-3" id="headerNav">
+          <div class="container-fluid px-0">
+            <a class="navbar-brand d-block d-md-none" href="#">
+              <img
+                src="../../images/Logo.svg"
+                height="40" alt="DizMiss kids logo"
+              >
+            </a>
+            <button
+              class="navbar-toggler border-0 "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            ><span class=""><i class="fa-solid fa-bars-staggered"></i></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
+                  <li class="nav-item d-none d-md-block">
+                      <a class="nav-link mx-2" href="#">
+                          <img src="../../images/Logo.svg" height="50" alt="DizMiss kids logo">
+                      </a>
+                  </li>
+                  <li class="nav-item d-md-flex justify-content-around align-items-center w-100 text-center ">
+                      <div>
+                          <a class="nav-link mx-2 list-item active" aria-current="page" href="#">Profile</a>
+                      </div>
+                      <div>
+                          <a class="nav-link mx-2 list-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Message</a>
+                      </div>
+                      <div>
+                          <a class="nav-link mx-2 list-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Favorites</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                    <div class="search d-flex">
+                      <input type="text" id="searchInput" class="form-control" placeholder="Search">
+                      <button class="btn list-item ms-2 border-0" id="searchButton">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+          </div>
+        </nav>
+            <!-- Modal -->
+            <div
+              class="modal fade bg-modal"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-primary-subtle text-white border ">
+                  <div class="modal-header border-bottom-0 ">
+                    <h5 class="modal-title" id="exampleModalLabel">Sorry!</h5>
+                    <button
+                      class="btn list-item border-0 "
+                      data-bs-dismiss="modal"
+                      aria-label="close"
+                    ><i class="fa-solid fa-xmark"></i></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    We apologize for the inconvenience. This function is currently
+                    under development.
+                  </div>
+                  <div class="modal-footer d-flex justify-content-center border-top-0 ">
+                    <button class="btn btn-primary border border-primary text-white" data-bs-dismiss="modal">Ok</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+      </div>
+      <div class="container-md ">
+      <div class="row">
+        <div class="col-1 col-sm-1  col-md-1 col-lg-2 d-flex flex-column me-2 me-sm-0 ">
+
+          <div class="d-block">
+            <ul class="list-group">
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="../feed/index.html"
+                  ><i class="fa-regular fa-rectangle-list me-2"></i><span class="d-none d-lg-block">Feed</span></a
+                >
+              </li>
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                  ><i class="fa-solid fa-circle-play me-2"></i><span class="d-none d-lg-block">Games</span></a
+                >
+              </li>
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                  ><i class="fa-solid fa-message me-2"></i><span class="d-none d-lg-block">Message</span></a
+                >
+              </li>
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                  ><i class="fa-solid fa-eye me-2"></i><span class="d-none d-lg-block">Visit</span></a
+                >
+              </li>
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                  ><i class="fa-solid fa-thumbs-up me-2"></i><span class="d-none d-lg-block">Likes</span></a
+                >
+              </li>
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                  ><i class="fa-solid fa-heart me-2"></i><span class="d-none d-lg-block">Favorites</span></a
+                >
+              </li>
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                  ><i class="fa-solid fa-gift me-2"></i><span class="d-none d-lg-block">Gifts</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-block mt-auto mb-4">
+            <ul class="list-group">
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                  ><i class="fa-solid fa-gear me-2"></i><span class="d-none d-lg-block">Settings</span></a
+                >
+              </li>
+              <li class="list-group-item px-0 px-md-3 ">
+                <a class="side-nav d-flex align-items-center " href="../../../index.html"
+                  ><i class="fa-solid fa-arrow-right-from-bracket me-2"></i
+                  ><span class="d-none d-lg-block">Log out</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-10 col-sm-11 col-md-11 col-lg-10">
+          <div class="scrollable-content">
+            <div class="row me-md-2 ">
+              <div class="col-12 border-bottom border-dark-subtle mb-3 ">
+                  <div class="card" style="background-image: url('../../images/img/background/moon.jpg'); background-size: cover; background-position: center; height: 300px;">
+                      <div class="card-body d-flex flex-column justify-content-end">
+                          <div class="d-flex align-items-center">
+                              <div class="rounded-circle overflow-hidden" style="width: 150px; height: 150px;">
+                                  <img src="../../images/img/avatar/default-avatar.jpg" alt="Profile Avatar" class="h-100">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-footer p-2">
+                    <div class="row">
+                        <div class="col-10">
+                            <h1 id="text-singleEntryName" class="mb-0 text-light"></h1>
+                            <h4 class="">100 friends · 50 subscribers</h4>
+                        </div>
+                        <div class="col-2 d-flex flex-column align-items-end justify-content-end">
+                            <a class="side-nav d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span class="d-none d-md-block">Subscribe</span>
+                                <i class="fa-regular fa-bell fa-lg ms-2 mb-3 mb-md-0 "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+              </div>
+          </div>
+          
+              <div class="row me-md-2">
+                <div class="col-6 col-sm-4 col-lg-2 col-md-3 mb-3">
+                  <div class="story-card" style="background-image: url('../../images/img/background/bg-story-1.png');">
+                      <div class="story-inscription">Story</div>
+                      <div class="profile-pic">
+                          <img class="w-100 " src="../../images/img/avatar/default-avatar.jpg" alt="Profile Avatar">
+                      </div>
+                      <div class="profile-name" id="text-singleEntryName">Profile Name</div>
+                  </div>
+              </div>              
+                <div class="col-6 col-sm-4 col-lg-2 col-md-3 mb-3">
+                  <div class="story-card" style="background-image: url('../../images/img/background/bg-story-2.png');">
+                      <div class="profile-pic">
+                          <img class="w-100 " src="../../images/img/users/user-2.jpg" alt="Profile Avatar">
+                      </div>
+                      <div class="profile-name">User Name</div>
+                  </div>
+                </div>
+                <div class="col-0 col-sm-4 col-md-3 col-lg-2 mb-3 d-none d-sm-inline ">
+                  <div class="story-card" style="background-image: url('../../images/img/background/bg-story-3.png');">
+                      <div class="profile-pic">
+                          <img class="w-100 " src="../../images/img/users/user-3.jpg" alt="Profile Avatar">
+                      </div>
+                      <div class="profile-name">User Name</div>
+                  </div>
+                </div>
+                <div class="col-0 col-md-3 col-lg-2 mb-3 d-none d-md-inline ">
+                  <div class="story-card" style="background-image: url('../../images/img/background/bg-story-4.png');">
+                      <div class="profile-pic">
+                          <img class="w-100 " src="../../images/img/users/user-4.jpg" alt="Profile Avatar">
+                      </div>
+                      <div class="profile-name">User Name</div>
+                  </div>
+                </div>
+                <div class="col-0 col-md-3 col-lg-2 mb-3 d-none d-lg-inline ">
+                  <div class="story-card" style="background-image: url('../../images/img/background/bg-story-5.png');">
+                      <div class="profile-pic">
+                          <img class="w-100 " src="../../images/img/users/user-5.jpg" alt="Profile Avatar">
+                      </div>
+                      <div class="profile-name">User Name</div>
+                  </div>
+                </div>
+                <div class="col-0 col-md-3 col-lg-2 mb-3 d-none d-lg-inline ">
+                  <div class="story-card" style="background-image: url('../../images/img/background/bg-story-6.png');">
+                      <div class="profile-pic">
+                          <img class="w-100 " src="../../images/img/users/user-6.jpg" alt="Profile Avatar">
+                      </div>
+                      <div class="profile-name">User Name</div>
+                  </div>
+                </div>
+            </div> 
+            <div class="row me-md-2">
+              <div class="col-12">
+                  <ul class="list-inline p-4 d-flex justify-content-between align-items-center border-bottom border-top border-dark-subtle flex-nowrap overflow-auto d-grid gap-3 ">
+                      <li class="list-inline-item"><a href="#" id="filter-publications" class="list-item active">Publications</a></li>
+                      <li class="list-inline-item list-item"><a href="#" id="filter-popular" class="list-item">Popular</a></li>
+                      <li class="list-inline-item list-item"><a href="#" id="filter-photo" class="list-item">Photo</a></li>
+                      <li class="list-inline-item list-item"><a href="#" id="filter-tags" class="list-item">Tags</a></li>
+                  </ul>
+              </div>
+            </div>
+
+          <div class="row me-md-2 posts">
+          </div>
+        </div>  
+      </div>
+      </div>
+      </div>
+    <script type="module" src="/src/js/pages/profile.mjs"></script>
+    <script
+      src="https://kit.fontawesome.com/8ba4dac050.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>

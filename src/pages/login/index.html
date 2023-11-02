@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="lh-1 h-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../dist/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <title>DizMiss | Sign in</title>
+</head>
+  <body class="lh-1 h-100">
+    <div class="wrapper bg-primary-subtle">
+      <div class="elipse-content">
+        <div class="elipse-left_item"></div>
+        <div class="elipse-right_item"></div>
+      </div>
+      <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark p-3" id="headerNav">
+          <div class="container-fluid">
+            <a class="navbar-brand d-block d-md-none" href="#">
+              <img src="../../images/Logo.svg" height="40" alt="DizMiss kids logo">
+            </a>
+            <button class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            ><span class=""><i class="fa-solid fa-bars-staggered"></i></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav d-flex justify-content-between align-items-center w-100">
+                  <li class="nav-item d-md-flex  ">
+                    <a class="nav-link mx-2" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">About Us</a>
+                    <a class="nav-link mx-2" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+                  </li>
+                  <li class="nav-item d-none d-md-block">
+                    <a class="nav-link mx-2" href="#">
+                    <img src="../../images/Logo.svg" height="50" alt="DizMiss kids logo">
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" id="sign_up-button" class="nav-link mx-2 btn btn-primary border border-primary text-white px-4 mt-2 mt-md-0">Sign up</button>
+                </li>                
+                </ul>
+              </div>
+
+          </div>
+        </nav>
+      </div>
+
+      <!-- Modal -->
+      <div
+      class="modal fade bg-modal"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-primary-subtle text-white border ">
+          <div class="modal-header border-bottom-0 ">
+            <h5 class="modal-title" id="exampleModalLabel">Sorry!</h5>
+            <button
+              class="btn list-item border-0 "
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="modal-body text-center">
+            We apologize for the inconvenience. This function is currently
+            under development.
+          </div>
+          <div class="modal-footer d-flex justify-content-center border-top-0 ">
+            <button class="btn btn-primary border border-primary text-white" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <!-- Modal -->
+<div
+class="modal fade bg-modal"
+id="errorModal"
+tabindex="-1"
+aria-labelledby="errorModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content bg-primary-subtle text-white border ">
+    <div class="modal-header border-bottom-0 ">
+      <h5 class="modal-title" id="errorModalLabel">Sorry!</h5>
+      <button
+        class="btn list-item border-0 "
+        data-bs-dismiss="modal"
+        aria-label="close"
+      ><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body text-center">
+      "Oops! The username and password you entered don't match. Please double-check and try again."
+    </div>
+    <div class="modal-footer d-flex justify-content-center border-top-0 ">
+      <button class="btn btn-primary border border-primary text-white" data-bs-dismiss="modal">Ok</button>
+    </div>
+  </div>
+</div>
+</div>
+
+      <main class="main my-3">
+        <div class="background-dekor">
+          <img class="background-hero d-none d-md-block" src="../../images/img/background/planet.png" alt="">
+          <img class="ghost-blue d-none d-sm-block" src="../../images/img/background/ghost-blue.png" alt="">
+          <img class="ghost-yellow d-none d-sm-block" src="../../images/img/background/ghost-yellow.png" alt="">
+        </div>
+        <div class="container my-1 ">
+          <div class="row">
+            <div class="col-xl-4 col-md-6 col-lg-5  col-sm-9">
+              <div class="card-form text-center p-4">
+                <h1 class="mb-0 text-light">Welcome!</h1>
+                <h4>Let's go!</h4>
+                <form action="../profile/index.html" class="mb-2 px-3">
+
+                  <div class="mb-3 text-start">
+                      <label for="emailInput" class="form-label">Email Address</label>
+                      <input type="email" class="form-control rounded-3" id="emailInput" placeholder="yourname@noroff.no" required>
+                      <div id="emailError" class="text-danger mt-2 error-text"></div>
+                  </div>
+              
+                  <div class="mb-3 text-start">
+                      <label for="passwordInput" class="form-label">Password</label>
+                      <input type="password" class="form-control rounded-3" id="passwordInput" placeholder="Strong" required>
+                      <div id="passwordError" class="text-danger mt-2 error-text"></div>
+                  </div>
+              
+                  <button type="submit" class="btn btn-secondary w-100 rounded-3">Sign in</button>
+                </form>
+              <div class="aside">
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-between align-items-center mb-3">
+                    <img class="d-none d-sm-block" src="../../images/img/dekor/lineat-left.svg" alt="">
+                    <h4 class="mb-0 w-100">Or sign up with</h4>
+                    <img class="d-none d-sm-block" src="../../images/img/dekor/lineat-right.svg" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-center gap-3"> 
+                    <button class="btn btn-light rounded-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"><img src="../../images/img/brand/google-logo.svg" alt=""></button>
+                    <button class="btn btn-light rounded-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"><img src="../../images/img/brand/apple-logo.svg" alt=""></button>
+                    <button class="btn btn-light rounded-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"><img src="../../images/img/brand/facebook-logo.svg" alt=""></button>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer py-3" id="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-8">
+                    <img class="mb-3" src="../../images/Logo.svg" alt="">
+                    <h4>Children's chat provides a safe and engaging platform for kids to connect, share, and learn.</h4>
+                </div>
+                <div class="col-lg-5 col-md-2 col-sm-2 col-2"></div>
+                <div class="col-lg-2 col-md-3 col-sm-3 col-6">
+                    <h3>Company</h3>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">Blog</a></li>
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">About</a></li>
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">Press</a></li>
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">Careers</a></li>
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-3 col-6">
+                    <h3>Products</h3>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">Terms & Conditions</a></li>
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">Privacy Policy</a></li>
+                        <li class="mb-1 "><a href="#" class="nav-link" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal">Trust Centre</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center "><h4>© 2022 DizMiss All Rights Reserved.</h4></div>
+    </footer>
+    
+    </div>
+    <script type="module" src="../../js/pages/login.mjs"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://kit.fontawesome.com/8ba4dac050.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
