@@ -9,7 +9,7 @@
 
 DizMiss is a modern social networking platform designed to connect individuals from all walks of life. Whether you're looking to reconnect with old friends, make new ones, or share your life's moments, DizMiss is the place to be.
 
-🌐 **Website**: [https://dizmiss.netlify.app/](https://dizmiss.netlify.app/)
+🌐 **Website**: [https://dizmiss-kids.netlify.app/](https://dizmiss-kids.netlify.app/)
 
 ---
 
